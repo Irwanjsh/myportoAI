@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Dompetku | Aplikasi Keuangan Keluarga</title>
+  <title>Ramadhan Tracker | Jejak Ibadah Keluarga</title>
   <!-- Google Fonts + Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -30,13 +30,13 @@
       z-index: -1;
     }
     .blur1 {
-      background: #10B981;
+      background: #F59E0B;
       top: -100px;
       left: -100px;
       opacity: 0.2;
     }
     .blur2 {
-      background: #F59E0B;
+      background: #8B5CF6;
       bottom: -100px;
       right: -100px;
       opacity: 0.15;
@@ -58,7 +58,7 @@
     .hero h1 {
       font-size: 4rem;
       margin: 25px 0 15px;
-      background: linear-gradient(135deg, #FFFFFF, #34d399);
+      background: linear-gradient(135deg, #FFFFFF, #fbbf24);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -85,8 +85,8 @@
     }
     .card:hover {
       transform: translateY(-8px);
-      border: 1px solid rgba(16,185,129,0.4);
-      box-shadow: 0 0 25px rgba(16,185,129,0.15);
+      border: 1px solid rgba(245,158,11,0.4);
+      box-shadow: 0 0 25px rgba(245,158,11,0.15);
     }
 
     /* GALERI FOTO - TEMPAT UNTUK MASUKKAN FOTO ASLI */
@@ -116,7 +116,7 @@
       transition: 0.3s;
     }
     .screenshot-card:hover {
-      border-color: rgba(16,185,129,0.5);
+      border-color: rgba(245,158,11,0.5);
       transform: translateY(-4px);
     }
     .screenshot-placeholder {
@@ -142,7 +142,7 @@
     .img-label {
       margin-top: 12px;
       font-size: 0.7rem;
-      color: #8b8b9b;
+      color: #fbbf24;
       background: rgba(0,0,0,0.5);
       padding: 4px 12px;
       border-radius: 30px;
@@ -176,7 +176,7 @@
     }
     .category-badge {
       font-size: 0.8rem;
-      color: #10B981;
+      color: #fbbf24;
       letter-spacing: 0.5px;
       font-weight: 500;
     }
@@ -221,7 +221,7 @@
       gap: 8px;
     }
     .buttons a:hover {
-      background: #10B981;
+      background: #f59e0b;
       transform: scale(0.97);
     }
     .features-list {
@@ -231,16 +231,16 @@
       margin: 20px 0 10px;
     }
     .feature-chip {
-      background: rgba(16,185,129,0.15);
+      background: rgba(245,158,11,0.15);
       border-radius: 30px;
       padding: 6px 16px;
       font-size: 0.75rem;
       font-weight: 500;
-      color: #6ee7b7;
+      color: #fcd34d;
     }
     .story-block {
       background: rgba(255,255,255,0.03);
-      border-left: 4px solid #10b981;
+      border-left: 4px solid #f59e0b;
       padding: 18px;
       border-radius: 20px;
       margin: 20px 0;
@@ -267,112 +267,102 @@
 <div class="blur blur2"></div>
 
 <section class="hero">
-  <div class="tag">💰 Simple Finance Tracker</div>
-  <h1>Dompetku</h1>
-  <p>Kelola pemasukan & pengeluaran harian dengan mudah. Pantau riwayat, analisis statistik, dan kendalikan arus kas keluarga dalam satu aplikasi.</p>
+  <div class="tag">🌙 Ramadhan Mubarak 1447 H</div>
+  <h1>Ramadhan Tracker</h1>
+  <p>Rekam setiap ibadah, pantau progres harian, dan abadikan cerita hangat Ramadhan bersama keluarga. Pendamping digital penuh berkah.</p>
 </section>
 
 <div class="app-container">
   <div class="card">
     <!-- GALERI FOTO: TEMPAT UNTUK ANDA MASUKKAN FOTO ASLI -->
     <div class="gallery-title">
-      📸 Screenshot Aplikasi Dompetku
+      📸 Screenshot Aplikasi Ramadhan Tracker
     </div>
     <div class="gallery-sub">
       ⬇️ Tempatkan foto asli aplikasi kamu di area di bawah ini
     </div>
     <div class="screenshot-grid">
-
-      <!-- Card 1: Home / Dashboard -->
+      
+      <!-- Card 1: Dashboard Utama / Progress Ibadah -->
       <div class="screenshot-card">
         <div class="screenshot-placeholder">
-          <img src="home.jpeg" alt="Dashboard Dompetku" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>🏠</span>Silakan masukkan foto home.jpeg<br><span style=\'font-size:0.65rem;\'>Letakkan file dengan nama home.jpeg di folder yang sama</span></div>'">
-          <div class="img-label">🏠 Halaman Utama & Ringkasan Keuangan</div>
+          <img src="home.jpeg" alt="Dashboard Ramadhan Tracker" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>🕌</span>Silakan masukkan foto dashboard<br><span style=\'font-size:0.65rem;\'>Letakkan file dengan nama ramadhan_dashboard.jpeg di folder yang sama</span></div>'">
+          <div class="img-label">📊 Dashboard & Progress Ibadah</div>
         </div>
         <div class="card-footer-caption">
-          Tampilan dashboard dengan saldo & grafik ringkas
-        </div>
-      </div>
-
-      <!-- Card 2: Riwayat Transaksi -->
-      <div class="screenshot-card">
-        <div class="screenshot-placeholder">
-          <img src="riwayat.jpeg" alt="Riwayat Transaksi Dompetku" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>🖼️</span>Silakan masukkan foto riwayat.jpeg<br><span style=\'font-size:0.65rem;\'>Letakkan file dengan nama riwayat.jpeg di folder yang sama</span></div>'">
-          <div class="img-label">📋 Halaman Riwayat Transaksi</div>
-        </div>
-        <div class="card-footer-caption">
-          Riwayat lengkap dengan filter & pencarian transaksi
+          Ringkasan harian, target puasa & shalat tarawih
         </div>
       </div>
       
-      <!-- Card 3: Statistik & Pengeluaran -->
+      <!-- Card 2: Jurnal Harian & Catatan -->
       <div class="screenshot-card">
         <div class="screenshot-placeholder">
-          <img src="statis.jpeg" alt="Statistik Pengeluaran Dompetku" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>📊</span>Masukkan foto statis.jpeg<br><span style=\'font-size:0.65rem;\'>File statis.jpeg harus tersedia di direktori yang sama</span></div>'">
-          <div class="img-label">📈 Statistik & Tren Pengeluaran</div>
+          <img src="jurnal.jpeg" alt="Jurnal Ramadhan" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>📓</span>Masukkan foto jurnal harian<br><span style=\'font-size:0.65rem;\'>File ramadhan_jurnal.jpeg harus tersedia di direktori yang sama</span></div>'">
+          <div class="img-label">📝 Jurnal & Refleksi Harian</div>
         </div>
         <div class="card-footer-caption">
-          Grafik 6 bulan terakhir & distribusi kategori
+          Catat cerita berbuka, doa, dan momen spesial
         </div>
       </div>
       
-      <!-- Card 4: Tambah Transaksi -->
+      <!-- Card 3: Target Ibadah & Khatam Qur'an -->
       <div class="screenshot-card">
         <div class="screenshot-placeholder">
-          <img src="tambah.jpeg" alt="Tambah Transaksi Dompetku" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>➕</span>Masukkan foto tambah.jpeg<br><span style=\'font-size:0.65rem;\'>Simpan file dengan nama tambah.jpeg atau ganti atribut src</span></div>'">
-          <div class="img-label">➕ Form Tambah Transaksi Baru</div>
+          <img src="daily.jpeg" alt="Target Ibadah Ramadhan" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>🎯</span>Masukkan foto target ibadah<br><span style=\'font-size:0.65rem;\'>Simpan file dengan nama ramadhan_target.jpeg</span></div>'">
+          <div class="img-label">🎯 Refleksi dan dalil</div>
         </div>
         <div class="card-footer-caption">
-          Kategori lengkap & pemilih tanggal transaksi
+          Pantau target khatam Qur'an, sedekah, dan qiyamul lail
         </div>
       </div>
 
-      <!-- Card 5: Pengaturan Aplikasi -->
+      <!-- Card 4: Pengingat & Motivasi -->
       <div class="screenshot-card">
         <div class="screenshot-placeholder">
-          <img src="pengaturan.jpeg" alt="Pengaturan Dompetku" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>⚙️</span>Masukkan foto pengaturan.jpeg<br><span style=\'font-size:0.65rem;\'>Simpan file dengan nama pengaturan.jpeg</span></div>'">
-          <div class="img-label">⚙️ Pengaturan Aplikasi</div>
+          <img src="edukasi.jpeg" alt="Pengingat Ramadhan" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>⏰</span>Masukkan foto pengingat<br><span style=\'font-size:0.65rem;\'>Simpan file dengan nama ramadhan_pengingat.jpeg</span></div>'">
+          <div class="img-label">🕌 Edukasi & tatacara</div>
         </div>
         <div class="card-footer-caption">
-          Konfigurasi akun & preferensi aplikasi
+          Notifikasi adzan, jadwal imsakiyah & motivasi harian
         </div>
       </div>
     </div>
 
     <!-- DESKRIPSI APLIKASI & FITUR -->
     <div class="card-content">
-      <div class="category-badge">● APLIKASI KEUANGAN PRIBADI</div>
-      <h2>💸 Dompetku — Atur Uang Jadi Mudah</h2>
-      <p>Dompetku adalah pencatat keuangan harian yang simpel dan cepat. Catat pemasukan dan pengeluaran, lihat histori transaksi, serta analisa tren belanja bulanan. Cocok untuk kamu yang ingin lebih bijak mengelola keuangan keluarga.</p>
+      <div class="category-badge">● APLIKASI PENDAMPING RAMADHAN</div>
+      <h2>🌙 Ramadhan Tracker — Jejak Berkah Keluarga</h2>
+      <p>Ramadhan Tracker hadir sebagai pendamping pintar penuh cerita. Catat ibadah wajib & sunnah, pantau target khatam Al-Qur'an, simpan kenangan tiap hari, dan dapatkan pengingat sahur & berbuka. Didesain dengan nuansa hangat & emosional untuk seluruh keluarga.</p>
       
       <div class="story-block">
-        <span>📘 “Dengan Dompetku, saya tahu persis ke mana uang pergi. Fitur kategori dan statistik membantu saya mengurangi pengeluaran tidak perlu.” — Pengguna setia</span>
+        <span>📖 “Setiap kali buka puasa, kami mengisi jurnal digital. Nenek tersenyum melihat grafik ibadah cucu-cucunya. Ramadhan terasa lebih dekat dan penuh makna.” — Keluarga Bahagia</span>
       </div>
 
       <div class="features-list">
-        <span class="feature-chip">✅ Catat pemasukan & pengeluaran</span>
-        <span class="feature-chip">📊 Grafik tren bulanan & tahunan</span>
-        <span class="feature-chip">🏷️ 12+ Kategori keuangan</span>
-        <span class="feature-chip">🔍 Filter riwayat transaksi</span>
-        <span class="feature-chip">☁️ Sinkronisasi Cloud (Firebase)</span>
-        <span class="feature-chip">📱 Tersedia Android & iOS</span>
+        <span class="feature-chip">✅ Pelacakan puasa & tarawih</span>
+        <span class="feature-chip">📓 Jurnal refleksi harian</span>
+        <span class="feature-chip">🕌 Pengingat sahur & berbuka</span>
+        <span class="feature-chip">🎯 Target khatam & sedekah</span>
+        <span class="feature-chip">🏆 Challenge keluarga</span>
+        <span class="feature-chip">📊 Grafik progres ibadah</span>
       </div>
       
       <div class="stack">
-        <span>Flutter</span>
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>LocalStorage</span>
         <span>Firebase</span>
-        <span>GitHub</span>
-        <span>GetX</span>
       </div>
       
       <div class="buttons">
-        <a href="#" id="downloadDompetkuBtn">📲 Download APK (Android)</a>
-        <a href="#" id="previewDompetkuBtn">👁️ Preview Demo Web</a>
-        <a href="#" id="githubDompetkuBtn" style="background:#111">🐙 GitHub Repository</a>
+        <a href="#" id="downloadRamadhanBtn">📲 Download APK (Android)</a>
+        <a href="#" id="previewRamadhanBtn">🌐 Preview Live Demo</a>
+        <a href="#" id="githubRamadhanBtn" style="background:#111">🐙 GitHub Repository</a>
       </div>
       <div style="font-size:0.7rem; margin-top: 20px; color:#6b7280; display: flex; gap: 16px; flex-wrap: wrap;">
-        <span>⭐ Rating 4.8 • 1000+ unduhan</span>
-        <span>🔥 Realtime Database</span>
+        <span>⭐ Tersedia untuk Android & iOS</span>
+        <span>🌙 Sync antar anggota keluarga</span>
         <span>📁 Open Source</span>
       </div>
     </div>
@@ -380,22 +370,22 @@
 </div>
 
 <footer>
-  💰 "Kendalikan keuanganmu mulai hari ini — Dompetku teman setia setiap transaksi" 💰<br>
-  <span style="font-size:0.7rem;">📱 Riwayat | Statistik | Tambah Transaksi | Pengaturan — semua dalam satu aplikasi</span>
+  🌸 "Sambut Ramadhan dengan catatan ibadah yang bermakna" — Ramadhan Tracker v2.0 🌸<br>
+  <span style="font-size:0.7rem;">📊 Dashboard | 📝 Jurnal | 🎯 Target | 🕌 Pengingat — semua dalam genggaman</span>
 </footer>
 
 <script>
-  document.getElementById('downloadDompetkuBtn')?.addEventListener('click', (e) => {
+  document.getElementById('downloadRamadhanBtn')?.addEventListener('click', (e) => {
     e.preventDefault();
-    alert("📲 Link download Dompetku\n\nAplikasi keuangan sederhana siap diunduh dari Google Play Store. Kelola pemasukan & pengeluaran jadi lebih mudah.");
+    alert("📲 Link download Ramadhan Tracker\n\nAplikasi siap diunduh dari Google Play Store. Semoga memberkahi setiap langkah ibadah keluarga Anda.");
   });
-  document.getElementById('previewDompetkuBtn')?.addEventListener('click', (e) => {
+  document.getElementById('previewRamadhanBtn')?.addEventListener('click', (e) => {
     e.preventDefault();
-    alert("👁️ Preview Dompetku\n\nFitur unggulan: • Input transaksi cepat • Grafik pengeluaran • Kategori dinamis • Riwayat lengkap dengan filter.");
+    alert("🌙 Demo Web Ramadhan Tracker\n\nFitur interaktif: dashboard progres harian, jurnal emosional, target khatam Qur'an, dan pengingat sahur.");
   });
-  document.getElementById('githubDompetkuBtn')?.addEventListener('click', (e) => {
+  document.getElementById('githubRamadhanBtn')?.addEventListener('click', (e) => {
     e.preventDefault();
-    alert("🐙 GitHub: https://github.com/dompetku/finance-tracker-flutter\nFlutter + Firebase, kontribusi dipersilakan.");
+    alert("🐙 GitHub Repository: https://github.com/ramadhantracker/jejakberkah\nKode sumber terbuka, kontribusi dipersilakan.");
   });
 </script>
 </body>
