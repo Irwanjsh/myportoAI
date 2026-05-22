@@ -1,337 +1,402 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Irwansyah | AI-Powered Web Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dompetku | Aplikasi Keuangan Keluarga</title>
+  <!-- Google Fonts + Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #090a12;
-      --card: rgba(19, 19, 26, 0.6);
-      --accent: #7f5af0;
-      --accent2: #00c6ff;
-      --text: #eaeaea;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at 30% 30%, #0d0d16, #070710 80%);
-      color: var(--text);
-      line-height: 1.6;
+      background: #0F0F11;
+      color: #F4F4F5;
       overflow-x: hidden;
-      position: relative;
     }
 
-    /* ==== Animated Background Glow ==== */
-    body::before {
-      content: "";
+    /* BLUR ORNAMENTS */
+    .blur {
       position: fixed;
-      top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background: radial-gradient(circle at 25% 25%, rgba(127,90,240,0.1), transparent 60%),
-                  radial-gradient(circle at 75% 75%, rgba(0,198,255,0.1), transparent 60%);
-      animation: aurora 8s infinite alternate;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      filter: blur(150px);
       z-index: -1;
-      filter: blur(60px);
     }
-    @keyframes aurora {
-      0% { transform: rotate(0deg) scale(1); opacity: 0.9; }
-      100% { transform: rotate(10deg) scale(1.05); opacity: 1; }
+    .blur1 {
+      background: #10B981;
+      top: -100px;
+      left: -100px;
+      opacity: 0.2;
+    }
+    .blur2 {
+      background: #F59E0B;
+      bottom: -100px;
+      right: -100px;
+      opacity: 0.15;
     }
 
-    header {
-      text-align: center;
-      padding: 120px 20px 80px;
-      background: linear-gradient(180deg, rgba(127,90,240,0.05), transparent 90%);
-      backdrop-filter: blur(10px);
-    }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--accent2);
-      margin-bottom: 20px;
+    /* HERO SECTION */
+    .hero {
+      padding: 120px 10% 60px;
       text-align: center;
     }
-    p { color: #b8b8b8; margin-bottom: 20px; }
-
-    .cta-btn {
+    .tag {
+      background: rgba(255,255,255,0.08);
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.9rem;
       display: inline-block;
-      padding: 12px 28px;
-      border-radius: 8px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 0 20px rgba(127,90,240,0.4);
-      animation: pulse 2.5s infinite;
-      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
     }
-    .cta-btn:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 0 35px rgba(0,198,255,0.7);
+    .hero h1 {
+      font-size: 4rem;
+      margin: 25px 0 15px;
+      background: linear-gradient(135deg, #FFFFFF, #34d399);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px rgba(127,90,240,0.4); }
-      50% { box-shadow: 0 0 25px rgba(0,198,255,0.6); }
-      100% { box-shadow: 0 0 10px rgba(127,90,240,0.4); }
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #B3B3B3;
+      line-height: 1.8;
     }
 
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+    /* MAIN CARD */
+    .app-container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 40px auto 60px;
     }
     .card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: inset 0 0 0.5px rgba(255,255,255,0.2), 0 0 20px rgba(127,90,240,0.05);
-      transition: 0.4s ease;
+      background: #18181B;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: 0.4s;
     }
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 30px rgba(127,90,240,0.3);
-    }
-
-    /* === Projects === */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
-    .project-card {
-      background: rgba(20,20,30,0.5);
-      border-radius: 16px;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 15px rgba(127,90,240,0.1);
-      transition: 0.4s;
-      transform: translateY(0);
-    }
-    .project-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 0 30px rgba(127,90,240,0.25);
+      border: 1px solid rgba(16,185,129,0.4);
+      box-shadow: 0 0 25px rgba(16,185,129,0.15);
     }
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      transition: transform 0.5s ease, filter 0.5s ease;
-    }
-    .project-card:hover img {
-      transform: scale(1.05);
-      filter: brightness(1.1);
-    }
-    .project-content { padding: 20px; display: flex; flex-direction: column; flex: 1; }
-    .project-content h3 { color: var(--accent2); margin-bottom: 10px; font-weight: 600; }
-    .project-content p { flex: 1; font-size: 0.9rem; color: #c0c0c0; margin-bottom: 10px; }
-    .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px; }
-    .badge {
-      background: rgba(127,90,240,0.15);
-      border: 1px solid rgba(127,90,240,0.4);
-      color: var(--accent2);
-      font-size: 0.75rem;
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
-    .project-content a {
-      align-self: flex-start;
-      text-decoration: none;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: white;
-      padding: 8px 18px;
-      border-radius: 6px;
+
+    /* GALERI FOTO - TEMPAT UNTUK MASUKKAN FOTO ASLI */
+    .gallery-title {
+      padding: 24px 30px 0;
+      font-size: 1.2rem;
       font-weight: 600;
-      box-shadow: 0 0 10px rgba(0,198,255,0.3);
-      transition: 0.3s ease;
+      color: #a1a1aa;
+      letter-spacing: 0.5px;
     }
-    .project-content a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 25px rgba(127,90,240,0.5);
+    .gallery-sub {
+      padding: 4px 30px 0;
+      font-size: 0.8rem;
+      color: #6b7280;
     }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 40px;
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      padding: 24px 30px;
     }
-    .link-btn {
-      text-decoration: none;
-      border: 1px solid var(--accent2);
-      color: var(--text);
-      padding: 12px 16px;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: 500;
+    .screenshot-card {
+      background: rgba(0,0,0,0.3);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
       transition: 0.3s;
-      background: rgba(255,255,255,0.03);
-      backdrop-filter: blur(8px);
     }
-    .link-btn:hover {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    .screenshot-card:hover {
+      border-color: rgba(16,185,129,0.5);
+      transform: translateY(-4px);
+    }
+    .screenshot-placeholder {
+      width: 100%;
+      background: #0a0a0c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      flex-direction: column;
+    }
+    .screenshot-placeholder img {
+      max-width: 100%;
+      max-height: 480px;
+      width: auto;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+      object-fit: contain;
+      background: #111;
+    }
+    .img-label {
+      margin-top: 12px;
+      font-size: 0.7rem;
+      color: #8b8b9b;
+      background: rgba(0,0,0,0.5);
+      padding: 4px 12px;
+      border-radius: 30px;
+    }
+    /* fallback jika gambar belum diisi */
+    .empty-photo-note {
+      background: #1e1e28;
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      color: #7e7e8c;
+      font-size: 0.8rem;
+      border: 1px dashed #3b3b44;
+    }
+    .empty-photo-note span {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .card-footer-caption {
+      padding: 12px 16px;
+      background: #0f0f12;
+      font-size: 0.7rem;
+      color: #a1a1aa;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+    }
+    .card-content {
+      padding: 30px;
+    }
+    .category-badge {
+      font-size: 0.8rem;
+      color: #10B981;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+    .card h2 {
+      margin: 12px 0 10px;
+      font-size: 1.9rem;
+    }
+    .card p {
+      color: #B3B3B3;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .stack {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    .stack span {
+      background: rgba(255,255,255,0.06);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .buttons a {
+      text-decoration: none;
       color: white;
-      box-shadow: 0 0 15px rgba(0,198,255,0.5);
-      transform: scale(1.03);
+      padding: 12px 24px;
+      border-radius: 30px;
+      background: #27272A;
+      transition: 0.3s;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
-
+    .buttons a:hover {
+      background: #10B981;
+      transform: scale(0.97);
+    }
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0 10px;
+    }
+    .feature-chip {
+      background: rgba(16,185,129,0.15);
+      border-radius: 30px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #6ee7b7;
+    }
+    .story-block {
+      background: rgba(255,255,255,0.03);
+      border-left: 4px solid #10b981;
+      padding: 18px;
+      border-radius: 20px;
+      margin: 20px 0;
+    }
     footer {
       text-align: center;
-      font-size: 0.85rem;
-      color: #7a7a7a;
-      padding: 40px 0;
+      padding: 40px;
+      color: #8F8F8F;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: 40px;
     }
-
-    /* Animasi fade saat scroll */
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .fade { animation: fadeUp 1s ease forwards; opacity: 0; }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      section { padding: 50px 16px; }
-      .project-card img { height: 160px; }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero { padding: 80px 5% 40px; }
+      .card-content { padding: 24px; }
+      .screenshot-grid { padding: 20px; gap: 16px; }
+      .gallery-title { padding: 20px 20px 0; }
+      .screenshot-placeholder img { max-height: 400px; }
     }
   </style>
 </head>
 <body>
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
 
-  <!-- HERO -->
-  <header id="home" class="fade">
-    <h1>Irwansyah</h1>
-    <p class="text-lg">🚀 AI-Powered Web Developer</p>
-    <p>Saya membangun website dengan kecepatan, presisi, dan sentuhan kecerdasan buatan modern.</p>
-    <div style="margin-top: 25px;">
-      <a href="https://wa.me/6281234567890" target="_blank" class="cta-btn">Hubungi via WhatsApp</a>
-      <a href="mailto:irwansyah.ai@gmail.com" class="cta-btn" style="margin-left:10px;">Kirim Email</a>
-    </div>
-  </header>
+<section class="hero">
+  <div class="tag">💰 Simple Finance Tracker</div>
+  <h1>Dompetku</h1>
+  <p>Kelola pemasukan & pengeluaran harian dengan mudah. Pantau riwayat, analisis statistik, dan kendalikan arus kas keluarga dalam satu aplikasi.</p>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="fade">
-    <h2>Tentang Saya</h2>
-    <p>Saya menggunakan teknologi <strong>AI terbaru</strong> untuk membantu bisnis dan kreator memiliki website yang <strong>modern, cepat,</strong> dan <strong>efisien.</strong> 
-    Dengan pendekatan otomatisasi dan pembelajaran mesin, saya menciptakan solusi web yang tidak hanya estetis tapi juga cerdas.</p>
-  </section>
+<div class="app-container">
+  <div class="card">
+    <!-- GALERI FOTO: TEMPAT UNTUK ANDA MASUKKAN FOTO ASLI -->
+    <div class="gallery-title">
+      📸 Screenshot Aplikasi Dompetku
+    </div>
+    <div class="gallery-sub">
+      ⬇️ Tempatkan foto asli aplikasi kamu di area di bawah ini
+    </div>
+    <div class="screenshot-grid">
 
-  <!-- SERVICES -->
-  <section id="services" class="fade">
-    <h2>Layanan Saya</h2>
-    <div class="card">
-      <h3>🎨 Web Design</h3>
-      <p>Desain website responsif dan futuristik dengan antarmuka pengguna modern.</p>
-    </div>
-    <div class="card">
-      <h3>🤖 AI Integration</h3>
-      <p>Integrasi AI seperti chatbot, rekomendasi cerdas, dan sistem otomatis berbasis data.</p>
-    </div>
-    <div class="card">
-      <h3>⚡ Fast Deployment</h3>
-      <p>Deploy website dengan pipeline otomatis dan hasil yang optimal dalam waktu singkat.</p>
-    </div>
-  </section>
-
-  <!-- FEATURED PROJECTS -->
-  <section id="projects" class="fade">
-    <h2>Featured Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="https://via.placeholder.com/600x400?text=AI+Portfolio" alt="AI Portfolio Project">
-        <div class="project-content">
-          <h3>AI Portfolio Builder</h3>
-          <p>Website portofolio yang dibuat dengan bantuan AI untuk menulis deskripsi otomatis dan menyusun layout optimal.</p>
-          <div class="badges">
-            <span class="badge">HTML</span>
-            <span class="badge">Tailwind</span>
-            <span class="badge">AI-Generated</span>
-          </div>
-          <a href="#">Live Demo</a>
+      <!-- Card 1: Home / Dashboard -->
+      <div class="screenshot-card">
+        <div class="screenshot-placeholder">
+          <img src="home.jpeg" alt="Dashboard Dompetku" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>🏠</span>Silakan masukkan foto home.jpeg<br><span style=\'font-size:0.65rem;\'>Letakkan file dengan nama home.jpeg di folder yang sama</span></div>'">
+          <div class="img-label">🏠 Halaman Utama & Ringkasan Keuangan</div>
+        </div>
+        <div class="card-footer-caption">
+          Tampilan dashboard dengan saldo & grafik ringkas
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="https://via.placeholder.com/600x400?text=Smart+Landing+Page" alt="Smart Landing Page">
-        <div class="project-content">
-          <h3>Smart Landing Page</h3>
-          <p>Landing page yang dioptimasi AI berdasarkan perilaku pengguna, menghasilkan konversi lebih tinggi.</p>
-          <div class="badges">
-            <span class="badge">Next.js</span>
-            <span class="badge">AI Integration</span>
-            <span class="badge">UX</span>
-          </div>
-          <a href="#">Live Demo</a>
+      <!-- Card 2: Riwayat Transaksi -->
+      <div class="screenshot-card">
+        <div class="screenshot-placeholder">
+          <img src="riwayat.jpeg" alt="Riwayat Transaksi Dompetku" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>🖼️</span>Silakan masukkan foto riwayat.jpeg<br><span style=\'font-size:0.65rem;\'>Letakkan file dengan nama riwayat.jpeg di folder yang sama</span></div>'">
+          <div class="img-label">📋 Halaman Riwayat Transaksi</div>
+        </div>
+        <div class="card-footer-caption">
+          Riwayat lengkap dengan filter & pencarian transaksi
+        </div>
+      </div>
+      
+      <!-- Card 3: Statistik & Pengeluaran -->
+      <div class="screenshot-card">
+        <div class="screenshot-placeholder">
+          <img src="statis.jpeg" alt="Statistik Pengeluaran Dompetku" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>📊</span>Masukkan foto statis.jpeg<br><span style=\'font-size:0.65rem;\'>File statis.jpeg harus tersedia di direktori yang sama</span></div>'">
+          <div class="img-label">📈 Statistik & Tren Pengeluaran</div>
+        </div>
+        <div class="card-footer-caption">
+          Grafik 6 bulan terakhir & distribusi kategori
+        </div>
+      </div>
+      
+      <!-- Card 4: Tambah Transaksi -->
+      <div class="screenshot-card">
+        <div class="screenshot-placeholder">
+          <img src="tambah.jpeg" alt="Tambah Transaksi Dompetku" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>➕</span>Masukkan foto tambah.jpeg<br><span style=\'font-size:0.65rem;\'>Simpan file dengan nama tambah.jpeg atau ganti atribut src</span></div>'">
+          <div class="img-label">➕ Form Tambah Transaksi Baru</div>
+        </div>
+        <div class="card-footer-caption">
+          Kategori lengkap & pemilih tanggal transaksi
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="https://via.placeholder.com/600x400?text=Chatbot+System" alt="Chatbot System">
-        <div class="project-content">
-          <h3>AI Chatbot System</h3>
-          <p>Chatbot otomatis berbasis LLM yang membantu bisnis menjawab pertanyaan pelanggan secara real-time.</p>
-          <div class="badges">
-            <span class="badge">Node.js</span>
-            <span class="badge">OpenAI API</span>
-            <span class="badge">Automation</span>
-          </div>
-          <a href="#">Live Demo</a>
+      <!-- Card 5: Pengaturan Aplikasi -->
+      <div class="screenshot-card">
+        <div class="screenshot-placeholder">
+          <img src="pengaturan.jpeg" alt="Pengaturan Dompetku" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'empty-photo-note\'><span>⚙️</span>Masukkan foto pengaturan.jpeg<br><span style=\'font-size:0.65rem;\'>Simpan file dengan nama pengaturan.jpeg</span></div>'">
+          <div class="img-label">⚙️ Pengaturan Aplikasi</div>
         </div>
-      </div>
-
-      <div class="project-card">
-        <img src="https://via.placeholder.com/600x400?text=E-commerce+AI" alt="AI E-commerce">
-        <div class="project-content">
-          <h3>AI E-commerce Optimizer</h3>
-          <p>Platform toko online dengan rekomendasi produk otomatis berdasarkan preferensi pengguna yang dianalisis AI.</p>
-          <div class="badges">
-            <span class="badge">React</span>
-            <span class="badge">AI Engine</span>
-            <span class="badge">UX Optimization</span>
-          </div>
-          <a href="#">Live Demo</a>
+        <div class="card-footer-caption">
+          Konfigurasi akun & preferensi aplikasi
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- LINKS -->
-  <section id="links" class="fade">
-    <h2>Temukan Saya</h2>
-    <div class="links">
-      <a href="https://github.com/irwansyah-ai" class="link-btn" target="_blank">💻 GitHub</a>
-      <a href="https://www.linkedin.com/in/irwansyah-ai" class="link-btn" target="_blank">🔗 LinkedIn</a>
-      <a href="https://instagram.com/irwansyah.ai" class="link-btn" target="_blank">📸 Instagram</a>
-      <a href="https://t.me/irwansyah" class="link-btn" target="_blank">💬 Telegram</a>
+    <!-- DESKRIPSI APLIKASI & FITUR -->
+    <div class="card-content">
+      <div class="category-badge">● APLIKASI KEUANGAN PRIBADI</div>
+      <h2>💸 Dompetku — Atur Uang Jadi Mudah</h2>
+      <p>Dompetku adalah pencatat keuangan harian yang simpel dan cepat. Catat pemasukan dan pengeluaran, lihat histori transaksi, serta analisa tren belanja bulanan. Cocok untuk kamu yang ingin lebih bijak mengelola keuangan keluarga.</p>
+      
+      <div class="story-block">
+        <span>📘 “Dengan Dompetku, saya tahu persis ke mana uang pergi. Fitur kategori dan statistik membantu saya mengurangi pengeluaran tidak perlu.” — Pengguna setia</span>
+      </div>
+
+      <div class="features-list">
+        <span class="feature-chip">✅ Catat pemasukan & pengeluaran</span>
+        <span class="feature-chip">📊 Grafik tren bulanan & tahunan</span>
+        <span class="feature-chip">🏷️ 12+ Kategori keuangan</span>
+        <span class="feature-chip">🔍 Filter riwayat transaksi</span>
+        <span class="feature-chip">☁️ Sinkronisasi Cloud (Firebase)</span>
+        <span class="feature-chip">📱 Tersedia Android & iOS</span>
+      </div>
+      
+      <div class="stack">
+        <span>Flutter</span>
+        <span>Firebase</span>
+        <span>GitHub</span>
+        <span>GetX</span>
+      </div>
+      
+      <div class="buttons">
+        <a href="#" id="downloadDompetkuBtn">📲 Download APK (Android)</a>
+        <a href="#" id="previewDompetkuBtn">👁️ Preview Demo Web</a>
+        <a href="#" id="githubDompetkuBtn" style="background:#111">🐙 GitHub Repository</a>
+      </div>
+      <div style="font-size:0.7rem; margin-top: 20px; color:#6b7280; display: flex; gap: 16px; flex-wrap: wrap;">
+        <span>⭐ Rating 4.8 • 1000+ unduhan</span>
+        <span>🔥 Realtime Database</span>
+        <span>📁 Open Source</span>
+      </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <footer>© 2026 Irwansyah — Crafted with AI & Passion</footer>
+<footer>
+  💰 "Kendalikan keuanganmu mulai hari ini — Dompetku teman setia setiap transaksi" 💰<br>
+  <span style="font-size:0.7rem;">📱 Riwayat | Statistik | Tambah Transaksi | Pengaturan — semua dalam satu aplikasi</span>
+</footer>
 
-  <script>
-    // Animasi fade saat scroll
-    const sections = document.querySelectorAll('.fade');
-    const fadeIn = () => {
-      sections.forEach(sec => {
-        const pos = sec.getBoundingClientRect().top;
-        if (pos < window.innerHeight - 100) sec.style.opacity = '1';
-      });
-    };
-    window.addEventListener('scroll', fadeIn);
-    fadeIn();
-  </script>
-
+<script>
+  document.getElementById('downloadDompetkuBtn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert("📲 Link download Dompetku\n\nAplikasi keuangan sederhana siap diunduh dari Google Play Store. Kelola pemasukan & pengeluaran jadi lebih mudah.");
+  });
+  document.getElementById('previewDompetkuBtn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert("👁️ Preview Dompetku\n\nFitur unggulan: • Input transaksi cepat • Grafik pengeluaran • Kategori dinamis • Riwayat lengkap dengan filter.");
+  });
+  document.getElementById('githubDompetkuBtn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert("🐙 GitHub: https://github.com/dompetku/finance-tracker-flutter\nFlutter + Firebase, kontribusi dipersilakan.");
+  });
+</script>
 </body>
 </html>
